@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file use pdfpages package to separate some pages from the dissertation.pdf
+% It can be used to separate certain chapter out of the dissertation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article} % Not really important
+\usepackage[fitpaper]{pdfpages}
+\begin{document}
+\includepdf[pages={1,7-9}]{_build/dissertation.pdf}
+\end{document}
