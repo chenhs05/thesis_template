@@ -1,0 +1,180 @@
+
+% used pagages
+\usepackage     [utf8]                  {inputenc}
+%\usepackage     [T1]                    {fontenc} % setted afterwards
+\usepackage                             {color}
+\usepackage                             {amsmath}
+\usepackage                             {graphicx}
+\usepackage     [english]               {babel}
+\usepackage                             {hyperref}
+
+
+% links
+\definecolor{darkblue}{rgb}{0.0,0.0,0.4}
+\definecolor{darkgreen}{rgb}{0.0,0.4,0.0}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=black,
+    citecolor=darkgreen,
+    urlcolor=darkblue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% more configuration for KomaScript %%%
+
+%% the KOMA-Script classes will typeset sectioning headings in sans-serif
+%% switch to serif for chapter headings
+%\setkomafont{disposition}{\bfseries}
+
+%% set both chapter name and page number to the header
+\usepackage[automark]{scrlayer-scrpage}
+%\addtokomafont{pagenumber}{\oldstylenums}
+\clearpairofpagestyles
+\lehead{\leftmark}
+\rohead{\rightmark}
+\renewcommand*\chaptermarkformat{\thechapter\autodot\enskip} % remove the word "Chapter" in the header
+%\ohead{\pagemark}
+\ofoot*{\pagemark} % set the page number at the footer, add * to apply for both scrheadings and plain pagestyle
+\pagestyle{scrheadings}
+
+%% for sub figure and sub figure caption
+\usepackage{caption}
+\usepackage{subcaption}
+%\setkomafont{caption}{\itshape\sffamily}
+\setkomafont{captionlabel}{\bfseries}
+
+%% indent of multi-line caption with KomaScript
+\setcapindent{0pt}
+
+%% for setting the vertical space in the labeling environment in the KOMA-script
+\usepackage{xpatch}
+\setkomafont{labelinglabel}{\bfseries}%{\ttfamily}
+\setkomafont{labelingseparator}{\normalfont}
+\xpatchcmd{\labeling}
+  {\let\makelabel\labelinglabel}
+  {\let\makelabel\labelinglabel\itemsep-4pt}
+  {}
+  {}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% bibliography %%%
+
+%% use biblatex for bibliography
+\usepackage{csquotes}
+\usepackage[style=numeric-comp, sorting=none, maxnames=4]{biblatex}
+
+%%% the bib file is added in the preamle for biblatex
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% citation
+
+%% for a capitalized autoref name
+\addto\extrasenglish{%
+  \def\chapterautorefname{Chapter}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% customize fonts %%%
+
+%%% If missing some symbols
+\usepackage{amsthm}
+\usepackage[psamsfonts]{amssymb, amsfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Latin Modern Roman, enhanced "default latex fonts"
+% \usepackage{lmodern}
+% \usepackage[scaled=1.05]{zlmtt}% latin modern typewriter
+
+%%% DejaVu sans & typewriter
+%\usepackage[scaled=0.94]{DejaVuSansMono}%typewriter
+%\usepackage[scaled=0.94]{DejaVuSans}% sans serif
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% libertine fonts
+% \usepackage{textcomp}
+% \usepackage[sb]{libertine}
+% \usepackage[varqu,varl]{inconsolata}% inconsolata
+% \usepackage[libertine,bigdelims,vvarbb]{newtxmath} % bb from STIX
+% \usepackage[cal=boondoxo]{mathalfa} % mathcal
+% \usepackage[supstfm=libertinesups, supscaled=1.2, raised=-.13em]{superiors}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% newtx family fonts (Times like fonts)
+% \usepackage[full]{textcomp}
+% \usepackage{newtxtext}
+% \usepackage[zerostyle=c]{newtxtt} % TX typewriter
+% \usepackage[bigdelims,vvarbb]{newtxmath} % bb from STIX
+% \usepackage[cal=pxtx]{mathalfa} % mathcal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% xcharter fonts
+\usepackage[full]{textcomp}
+\usepackage[sups,scaled=.98]{XCharter}
+\usepackage[scaled=0.90]{DejaVuSans}% sans serif
+%\usepackage[scaled=0.90]{DejaVuSansMono}% another option for typewrite
+\usepackage[scaled=1.05,varqu,varl]{inconsolata}% typewriter
+\usepackage[charter,bigdelims,vvarbb,scaled=1.07]{newtxmath}% math
+%\usepackage[cal=pxtx]{mathalfa} % mathcal
+\linespread{1.04}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{bm} % load after all math to give access to bold math
+
+% font encoding
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% other configurations %%%
+
+%% dummy text and page layout debugging
+\usepackage{blindtext}
+%\usepackage{showframe}
+
+%% line number
+\usepackage{lineno}
+
+%% set line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+%% standalone
+\usepackage{standalone}
+%% tikz for figure annotation
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{circuits.logic.US}
+
+%% use the tikz-timing package to draw timing diagram
+\usepackage{tikz-timing}
+
+%% draw Feynman diagrams
+\usepackage[force]{feynmp-auto}
+
+%% for tables
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabu}
+\usepackage{multirow}
+
+%% units
+\usepackage{siunitx}
+\sisetup{
+	range-phrase = -,
+	exponent-product = \cdot,
+	range-units = single,
+	per-mode = symbol,
+	detect-all,
+	math-micro=\upmu,text-micro=\ensuremath{\upmu},
+	math-ohm=\upOmega,text-ohm=\ensuremath{\upOmega},
+}
+
+%% xspace for space after newcommand
+\usepackage{xspace}
+
+%% separation of list items
+\usepackage{enumitem}
+
+%% reset footnote number per page
+\usepackage{perpage}
+\MakePerPage{footnote}

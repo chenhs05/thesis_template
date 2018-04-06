@@ -1,0 +1,75 @@
+% main dissertation file
+
+\documentclass  [
+  paper    = a4,
+  BCOR     = 10mm,
+  DIV      = 14,
+  twoside,
+  fontsize = 11pt,
+ % fleqn,
+  toc      = bibnumbered,
+  toc      = listofnumbered,
+  numbers  = noendperiod,
+  headings = big,
+  listof   = leveldown,
+	chapterprefix = true,  % add the word "Chapter" before the chapter number
+	headsepline   = true,  % add a separation line between the header and the main content
+  version  = 3.21
+]{scrbook}
+
+
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}%
+\input{setup/macros.tex}% my new macros
+
+\listfiles % for debugging
+\begin{document}
+%% set the line numbers if necessary
+%\setpagewiselinenumbers
+%\linenumbers
+
+
+	%% title and abstracts %%
+	% setspace package doesn't work well with \renewcommand{\baselinestretch}{} in
+	% the titlepage, thus have this page in a separated part
+	\begin{spacing}{1}
+	  \include{frontmatter/titlepages-eng} % english title page
+	  \cleardoublepage
+	  \include{frontmatter/abstracts}
+	\end{spacing}
+
+  %% table of contents %%
+  \cleardoublepage
+  \pagenumbering{roman}
+  %\setcounter{tocdepth}{3}
+  \tableofcontents
+
+  %% Put your contents here %%
+	%% do not put ".tex" postfix into the \include{}
+  \cleardoublepage
+  \pagenumbering{arabic}
+  %\setcounter{chapter}{-1}  % start chapter numbering at 0 if wanted
+  \include{introduction/introduction}
+  \include{experiment/experiment}
+	% Put more chapters here
+  \include{summary/summary}
+
+  %% appendix and end matters %%
+	\part*{Appendix}
+	\addcontentsline{toc}{part}{Appendix} % remove the "part I" heading in the Appendix page, and add it to the table of contents
+
+	\appendix
+	%% If the first appendix chapter entry is messed up with previous "Appendix" page in the table of content
+	%% put the first appendix chapter name here instead of the separated file
+	\include{appendix/some_extra_stuff}
+	\chapter{Lists}
+	\listoffigures
+	\listoftables
+
+	%%% bibliography %%%
+	%% with biblatex, the reference files are included in the preamble.tex
+	\printbibliography
+
+	\cleardoublepage
+	\include{endmatter/acknowledgements}
+\end{document}
