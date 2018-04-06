@@ -1,0 +1,17 @@
+PDF_FILES=$(shell find . -type f -iname "*.svg" | sed "s/\.svg$$/.pdf/1")
+
+.PHONY: all clean print_file_names
+
+
+all: $(PDF_FILES)
+
+%.pdf:%.svg
+	@echo "Generate $@"
+	inkscape -z -D --file=$< --export-pdf=$@
+
+clean:
+	@echo "Removing all the generated .pdf files"
+	rm $(PDF_FILES)
+
+print_file_names:
+	@echo $(PDF_FILES)
