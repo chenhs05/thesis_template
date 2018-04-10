@@ -1,0 +1,27 @@
+%%%% snippet to add annotation to a figure
+%%%% reference: https://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
+\documentclass[tikz, varwidth=true]{standalone}
+\begin{document}
+\begin{tikzpicture}[font = \normalsize \sffamily, align = center]
+	\node[anchor = south west, inner sep = 0] (image) at (0,0) {
+		\includegraphics[width=0.45\textwidth]{appendix/figures/pokemon_ball.pdf}};
+	\begin{scope}[x = {(image.south east)}, y={(image.north west)}]
+
+		%% draw help lines
+		\draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+		\foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; };
+		\foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; };
+
+		%% add nodes
+		\node[anchor = south] (up) at (0.8, 1.05) {Upper half sphere};
+		\node[anchor = south] (down) at (0.2, 1.05) {Lower half sphere};
+		\node[anchor = south] (trigger) at (0.5, 1.05) {Trigger};
+
+		%% draw arrows
+		\draw[->, thick] (up) -- (0.7, 0.8);
+		\draw[->, thick] (down) -- (0.3,0.3);
+		\draw[->, thick] (trigger) -- (0.5,0.5);
+
+	\end{scope}
+\end{tikzpicture}
+\end{document}
