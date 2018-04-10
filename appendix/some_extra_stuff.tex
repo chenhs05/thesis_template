@@ -20,7 +20,7 @@ The figure environments can be put to the dissertation document using
 As an example, \autoref{fig:standalone} is included here with:
 
 \begin{spacing}{1}
-\begin{lstlisting}[language=Tex]
+\begin{lstlisting}[language={[LaTex]Tex}]
 \begin{figure}[!h]
 	\centering
 	\input{appendix/pokemon_ball.tex}
@@ -59,7 +59,7 @@ The "Big O", the order of, is show as $\mathcal{O}$ using the math font provided
 In order to get the symbol like $\bigO$, a new symbol is declared using the
 Computer Modern math font in \emph{setup/macros.tex}:
 \begin{spacing}{1}
-\begin{lstlisting}[language=Tex]
+\begin{lstlisting}[language={[LaTex]Tex}]
 \DeclareSymbolFont{cmfonts}{OMS}{cmsy}{m}{n}
 \DeclareMathSymbol{\cmbigO}{\mathord}{cmfonts}{`O}
 \newcommand{\bigO}{\mathcal{\cmbigO}}
