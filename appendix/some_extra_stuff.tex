@@ -3,3 +3,68 @@
 \chapter{Some extra stuffs}
 
 Here is some extra stuff.
+
+
+\section{Standalone Package}
+
+When draw some figure with \texttt{Tikz}, it is nicer to try out the drawing
+in the small "test bench" rather than do the drawing in the main dissertation
+latex project and compile the whole document again and again.
+
+The \texttt{standalone} package provides the possibility of putting the figure
+environments to their own source code files and compiling them in a small "test
+bench" main file: \texttt{standalone\_test.tex}.
+
+The figure environments can be put to the dissertation document using
+\inlinecode{Tex}{\\input\{\}} command.
+As an example, \autoref{fig:standalone} is included here with:
+
+\begin{spacing}{1}
+\begin{lstlisting}[language=Tex]
+\begin{figure}[!h]
+	\centering
+	\input{appendix/pokemon_ball.tex}
+	\caption{A drawing of pokemon ball.}
+	\label{fig:standalone}
+\end{figure}
+\end{lstlisting}
+\end{spacing}
+
+\begin{figure}[!h]
+	\centering
+	\input{appendix/pokemon_ball.tex}
+	\caption{A drawing of pokemon ball.}
+	\label{fig:standalone}
+\end{figure}
+
+\section{Adding Annotation to figure}
+
+A snippet of adding annotations to the figures can be found in
+\emph{appendix/annotation.tex}.
+The help lines and the coordination for annotation is add and can be turn off.
+With the help lines and coordination, the figure shown in
+\autoref{fig:annotation}.
+\begin{figure}[!h]
+	\centering
+	\input{appendix/annotation.tex}
+	\caption{Example of Adding Annotation to Figure.}
+	\label{fig:annotation}
+\end{figure}
+
+
+\section{Big O}
+
+The "Big O", the order of, is show as $\mathcal{O}$ using the math font provided by
+\emph{newtxmath} package.
+In order to get the symbol like $\bigO$, a new symbol is declared using the
+Computer Modern math font in \emph{setup/macros.tex}:
+\begin{spacing}{1}
+\begin{lstlisting}[language=Tex]
+\DeclareSymbolFont{cmfonts}{OMS}{cmsy}{m}{n}
+\DeclareMathSymbol{\cmbigO}{\mathord}{cmfonts}{`O}
+\newcommand{\bigO}{\mathcal{\cmbigO}}
+\end{lstlisting}
+\end{spacing}
+
+\inlinecode{Tex}{\$\\mathcal\{O\}\$} produces $\mathcal{O}$, and
+\inlinecode{Tex}{\$\\bigO\$} produces $\bigO$.

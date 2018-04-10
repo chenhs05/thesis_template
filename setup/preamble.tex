@@ -177,3 +177,22 @@
 %% reset footnote number per page
 \usepackage{perpage}
 \MakePerPage{footnote}
+
+%% for showing source code
+\usepackage{listings}
+\lstset{
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\tiny\color[gray]{0.6},
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	keepspaces=true,
+	showstringspaces=false,
+	basicstyle=\small\ttfamily,
+	keywordstyle=\color{blue},
+	commentstyle=\color[grey]{0.6},
+	stringstyle=\color[RGB]{255,150,75}
+}
+\definecolor{lightgray}{gray}{0.9}
+\newcommand{\inlinecode}[2]{\colorbox{lightgray}{\lstinline[language=#1]$#2$}}
