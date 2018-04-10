@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is used to try standalone parts in a small sandbox project in order
+% to to avoid compiling the big dissertation.tex again and again.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Main file for standalone test
+% standalone document class:
+\documentclass[
+	paper=a4,
+  paper    = a4,
+  BCOR     = 10mm,
+  DIV      = 14,
+  twoside,
+  fontsize = 11pt,
+]{scrbook}
+  
+\input{setup/preamble}
+
+% Inside the real ’document’ environment
+% read the sub−file with ’\input’
+\begin{document}
+
+%% TO check the scaling fact between fonts %%
+% \Huge
+% \texttt{EhlE}\textrm{EhlE}$EhlE$\textrm{EhlE}\textsf{EhlE}
+
+%% include a standalone part %%
+\begin{figure}[tb]
+	\centering
+	\input{appendix/pokemon_ball.tex}
+	\caption{Drawing of a Pokemon ball.}
+\end{figure}
+
+Here is some text.
+
+\end{document}
