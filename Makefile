@@ -9,12 +9,13 @@ CONTINUOUS=-pvc
 
 MAIN=dissertation
 SOURCES=$(MAIN).tex */*.tex
-FIGURES=*/figures/* */drawings/*
+FIGURES=*/figures/*.pdf
 BIBLIOGRAPHY=references.bib
 
 all: $(MAIN).pdf
 
 $(MAIN).pdf : $(MAIN).tex $(SOURCES) $(FIGURES) $(BIBLIOGRAPHY)
+	for f in $$(find . -maxdepth 1 -mindepth 1 -type d ! -name "_*" ! -name ".*" -print); do mkdir -p _build/$$f; done
 	$(LATEXMK) $(LATEXMKOPT) $(LATEXOPT) $(NONSTOP) $(MAIN).tex
 
 force :
