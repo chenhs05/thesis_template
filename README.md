@@ -1,6 +1,6 @@
 # Thesis Template
 
-This is a Latex thesis template based on [the Master thesis
+This is a Latex thesis template based on the [Master thesis
 template](http://www.physik.uni-heidelberg.de/studium/master/vorlagen) of the
 faculty for physics and astronomy of Heidelberg University.
 
@@ -11,6 +11,7 @@ A few features and configurations are added.
   * [Main Latex Documents](#main-latex-documents)
   * [Folder Structure](#folder-structure)
   * [init.sh and Makefiles](#init-sh-and-makefiles)
+  * [Latex Configurations and Tricks](#latex-configurations-and-tricks)
   * [Vim Plugins](#vim-plugins)
 
 ## Requirements
@@ -60,6 +61,13 @@ sub-folder.
   .svg files once there is any update in the .svg files.  
   Run with the command `make -f Makefile.inkscape`.
 
+
+## Latex Configurations and Tricks
+
+The configurations of the thesis latex document are in `setup/preamble.tex`
+file.
+
+Some tricks are shown in the **Appendix** part of the [example thesis PDF file](dissertation.pdf).
 
 ## Vim Plugins
 
