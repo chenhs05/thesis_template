@@ -4,7 +4,6 @@ This is a Latex thesis template based on the [Master thesis
 template](http://www.physik.uni-heidelberg.de/studium/master/vorlagen) of the
 faculty for physics and astronomy of Heidelberg University.
 
-A few features and configurations are added.
 
 ## Table of contents
   * [Requirements](#requirements)
@@ -19,7 +18,7 @@ A few features and configurations are added.
 This template was tested and used in Debian 9.
 
 `texlive` package is required to have a latex system.
-Installing `texlive-full` package is recommended.
+`texlive-full` package is recommended to get all the necessary latex packages.
 
 `latexmk` package is required for compiling the latex documents.
 
