@@ -15,7 +15,7 @@ A few features and configurations are added.
 
 ## Requirements
 
-This template was tested and used in Debian.
+This template was tested and used in Debian 9.
 
 `texlive` package is required to have a latex system.
 Installing `texlive-full` package is recommended.
@@ -33,11 +33,9 @@ Check the `vimtex` plugin help file in Vim for more details.
 
 There are three main Latex documents in this repository:
 1. `dissertation.tex`: the main document for the thesis.
-
 2. `separated_pages.tex`: the main document for separating pages out of the
    thesis pdf file.  
    Run `texdoc pdfpages` in the command line for more details.
-
 3. `standalone_test.tex`: the main document for trying out figures with the
    standalone package.  
    Run `texdoc standalone` in the command line for more details.
@@ -65,11 +63,14 @@ sub-folder.
 
 ## Vim Plugins
 
-I used Vim for editing the thesis. I recommend the following three plugins:
+I used Vim (neovim) for editing the latex files. I recommend the following
+three plugins for this task:
 1. [lervag/vimtex](https://github.com/lervag/vimtex): Plugin for editing Latex
    files in Vim/neovim.
-2. [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim): Plugin for automatic completion. This plugin
-   is for neovim/Vim8. A similar plugin for Vim7 is [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim).
+2. [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim): Plugin for
+   automatic completion. This plugin is for neovim/Vim8.  
+   A similar plugin for Vim7 is
+   [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim).
 3. [ujihisa/neco-look](https://github.com/ujihisa/neco-look): Plugin for
    English words completion.
 
