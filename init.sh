@@ -4,4 +4,4 @@
 # these two files are changed from time to time and the changes of these two
 # files should not be commited.
 git update-index --skip-worktree standalone_test.tex
-git update-index --skip-worktree seperated_pages.tex
+git update-index --skip-worktree separated_pages.tex
