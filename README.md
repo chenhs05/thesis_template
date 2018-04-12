@@ -76,7 +76,7 @@ I used Vim for editing the thesis. I recommend the following three plugins:
 
 The configurations for above plugins are:
 
-- *Latex and vimtex*:
+- **Latex and vimtex**:
 
 ```vim
 " latex {{{
@@ -138,7 +138,7 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " }}}
 ```
 
-- *deoplete*:
+- **deoplete**:
 
 ```vim
 if has('nvim')
